@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <!-- <span>M-Card</span>
+    <span class="example-spacer"></span> -->
+    <mat-icon class="example-icon" aria-hidden="false" 
+    aria-label="Example user verified icon">verified_user</mat-icon>
+    <div>
+        <h3>User1</h3>
+      </div>
+      <div style="margin-left: auto;">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>face</mat-icon>
+            <span>Account</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notepad</mat-icon>
+            <span>Copy Card Details</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable Card</span>
+          </button>
+        </mat-menu>
+      </div>
+</mat-toolbar>

@@ -1,0 +1,22 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div mat-dialog-content>
+  <p>Enter Amount</p>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="data.amount">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="Accent" (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.amount" cdkFocusInitial>Confirm</button>
+</div>
+
+<!-- <h2 mat-dialog-title>This is a Dialog title</h2>
+
+<mat-dialog-content>
+
+<p> Place content here </p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+</mat-dialog-actions> -->

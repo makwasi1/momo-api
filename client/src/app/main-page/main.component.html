@@ -1,0 +1,31 @@
+
+<div class="wallet-container text-center" [hidden]="false">
+    <!-- <p class="page-title"><i class="fa fa-align-left"></i><i class="fa fa-user"></i></p> -->
+
+    <div class="amount-box text-center">
+        <img style="margin-top: 20px;" src="../../assets/mtn.png" alt="wallet">
+        <p>Total Balance</p>
+        <p class="amount">UGX {{cardDetails}}</p>
+        <p>Prepaid UGX {{prePaidCardBalance}}</p>
+    </div>
+
+    <div class="btn-group text-center">
+        <button type="button" (click)="openDialog()" class="btn btn-outline-light modal-open">Add Money</button>
+        <button type="button"  class="btn btn-outline-light">PrePay</button>
+        </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+ 

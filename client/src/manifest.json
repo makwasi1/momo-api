@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "M Card",
+    "version": "1.0.0",
+    "description": "M Card, Reimagine Payments",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "M Card"
+    },
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*",
+        "*://*/*"
+    ],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "identity"
+    ]
+}

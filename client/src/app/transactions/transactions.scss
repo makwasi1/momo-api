@@ -1,0 +1,345 @@
+.example-small-box, .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .txn-history {
+    text-align: left;
+  }
+  
+  .txn-list {
+    background-color: #fff;
+    padding: 12px 10px; 
+    color: #777;
+    font-size: 14px;
+    margin: 7px 0;
+  }
+  
+  .debit-amount {
+    color: red;
+    float: right;
+  }
+  
+  .credit-amount {
+    color: green;
+    float: right;
+  
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+  
+  /********************************* 
+COMEÇO Transformação 3d do cartão 
+*********************************/
+.esqueleto-cartao {
+  position: relative;
+  width: 15em;
+  height: 15em;
+  z-index: 1;
+  -webkit-transition: all 0.4s linear;  /* Saf3.2+, Chrome */
+     -moz-transition: all 0.4s linear;  /* FF4+ */
+       -o-transition: all 0.4s linear;  /* Opera 10.5+ */
+          transition: all 0.4s linear;
+  -webkit-perspective: 1000;  /* Saf4+, Chrome 12+ */ 
+     -moz-perspective: 1000;  /* FF10+ */
+      -ms-perspective: 1000;  /* IE10+ */
+          perspective: 1000;
+
+  .cartao {
+      animation: animatecard 5s ease-in-out 0s infinite normal forwards;
+      width: 100%;
+      height: 100%;
+      -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+          -ms-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: all 0.4s linear;  /* Saf3.2+, Chrome */
+         -moz-transition: all 0.4s linear;  /* FF4+ */
+           -o-transition: all 0.4s linear;  /* Opera 10.5+ */
+              transition: all 0.4s linear;
+    
+    
+      .face-cartao {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+             -moz-backface-visibility: hidden;
+              -ms-backface-visibility: hidden;
+                  backface-visibility: hidden;
+        
+          &.traseira {
+              display: block;
+              -webkit-transform: rotateY(180deg);
+                 -moz-transform: rotateY(180deg);
+                  -ms-transform: rotateY(180deg);
+                      transform: rotateY(180deg);
+              -webkit-box-sizing: border-box; /* prev iOS4, prev Android  2.3 */
+                 -moz-box-sizing: border-box; /* FF1+ */
+                      box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
+          }
+      }
+  }
+}
+/****************************** 
+FIM Transformação 3d do cartão 
+******************************/
+
+/************************ 
+COMEÇO animacao do cartão 
+************************/
+@keyframes animatecard {
+  0% {
+  animation-timing-function: ease-out;
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+10% {
+  animation-timing-function: ease-in;
+  transform: scale(0.91);
+}
+
+17% {
+  animation-timing-function: ease-out;
+  transform: scale(0.98);
+}
+
+33% {
+  animation-timing-function: ease-in;
+  transform: scale(0.87);
+}
+
+45% {
+  animation-timing-function: ease-out;
+      -webkit-transform: rotateY(180deg) scale(1);
+         -moz-transform: rotateY(180deg) scale(1);
+          -ms-transform: rotateY(180deg) scale(1);
+              transform: rotateY(180deg) scale(1);
+}
+  
+  100% {
+      -webkit-transform: rotateY(180deg);
+         -moz-transform: rotateY(180deg);
+          -ms-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+}
+}
+
+/********************* 
+FIM animacao do cartão 
+*********************/
+
+
+/*************************** 
+COMEÇO Estilização do cartão 
+***************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Ubuntu", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+small {
+  opacity: .7;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+// background frontal
+$gradient-webkit: -webkit-linear-gradient(to top left, #369A24, #5D54CC);
+$gradient-moz: -moz-linear-gradient(to top left, #369A24, #5D54CC);
+$gradient: linear-gradient(to top left, #369A24, #5D54CC);
+// background traseiro
+$gradient-webkit-back: -webkit-linear-gradient(to bottom left, #5D54CC, #369A24);
+$gradient-moz-back: -moz-linear-gradient(to bottom left, #5D54CC, #369A24);
+$gradient-back: linear-gradient(to bottom left, #5D54CC, #369A24);
+// background cartao padrao
+$background: #5D54CC;
+// background chip metalico
+$chip-webkit: -webkit-linear-gradient(to top left, #AACAEF, #FDE7F9);
+$chip-moz: -moz-linear-gradient(to top left, #AACAEF, #FDE7F9);
+$chip: linear-gradient(to top left, #AACAEF, #FDE7F9);
+
+//esqueleto do cartao
+.esqueleto-cartao {
+  //cartao
+  .cartao {
+      box-shadow: 1px 1px 50px rgba(0,0,0,0.5);
+      border-radius: 15px;
+      background: $background;
+      color: white;
+      
+      .face-cartao {
+          border-radius: 15px;
+          
+          // parte frontal do cartao
+          &.frontal {
+              background: $gradient-webkit;
+              background: $gradient-moz;  
+              background: $gradient;
+              
+              // chip do cartao
+              .chip {
+                  width: 55px;
+                  height: 40px;
+                  position: absolute;
+                  left: 20px;
+                  top: 30px;
+                  border-radius: 3px;
+                  background: $chip-webkit;
+                  background: $chip-moz;
+                  background: $chip;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  div {
+                      padding: 4px 6px;
+                      background: $chip-webkit;
+                      background: $chip-moz;
+                      background: $chip;
+                      box-shadow: 1px 1px 7px rgba(0,0,0,.1);
+                  }
+              }
+              
+              // numero do cartao
+              .numero-cartao {
+                  font-weight: 300;
+                  position: relative;
+                  top: 95px;
+                  left: 20px;
+                  font-size: 1.5em;
+              }
+              
+              // nome do proprietario
+              .proprietario {
+                  position: absolute;
+                  left: 20px;
+                  bottom: 65px;
+                  font-size: 1.2em;
+              }
+              
+              // data de validade
+              .validade {
+                  position: absolute;
+                  bottom: 25px;
+                  left: 20px;
+                  display: flex;
+                  align-items: center;
+                  
+                  .small {
+                      font-size: .6em;
+                      font-weight: bold;
+                      line-height: 9px;
+                      margin-right: 5px;
+                  }
+              }
+              
+              // bandeira do cartao
+              .bandeira {
+                  position: absolute;
+                  bottom: 25px;
+                  right: 20px;
+                  width: 70px;
+                  height: 40px;
+                  border-radius: 30px;
+                  background-color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  
+                  img {
+                      width: 50px;
+                      
+                      &.mastercard {
+                          display: none;
+                      }
+                      &.visa {
+                          margin-top: 5px;
+                      }
+                  }
+              }
+          }
+          
+          // traseira do cartão
+          &.traseira {
+              background: $gradient-webkit-back;
+              background: $gradient-moz-back;  
+              background: $gradient-back;
+              
+              // barra preta
+              .barra {
+                  width: 100%;
+                  height: 40px;
+                  margin-top: 20px;
+                  background-color: rgba(0,0,0,.8);
+              }
+              
+              // observacao
+              .observacao {
+                  display: block;
+                  width: 80%;
+                  margin: auto;
+                  font-size: .8em;
+                  margin-top: 10px;
+                  
+                  a {
+                      text-decoration: none;
+                      color: lightblue;
+                      &:hover {
+                          text-decoration: underline;
+                      }
+                  }
+              }
+              
+              // caixa com a senha
+              .box-senha {
+                  width: 80%;
+                  padding: 5px;
+                  margin: auto;
+                  margin-top: 20px;
+                  background-color: white;
+                  color: black;
+                  text-align: right;
+              }
+          }
+      }
+  }
+}
+
+
+/************************ 
+FIM Estilização do cartão 
+************************/

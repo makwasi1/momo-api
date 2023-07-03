@@ -1,0 +1,31 @@
+.otp{
+    /* margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 28%;
+    margin-bottom: 10%; */
+    width: 357px;
+    height: 500px;
+    background-color: #fff;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    background-position: center;
+    justify-content: center;
+
+    /* border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2); */
+}
+
+.otp-body{
+    align-content: center;
+    display: block;
+    /* margin-top: 10%; */
+    padding: 10px;
+    /* margin-left: 10%;
+    margin-right: 28%;
+    margin-bottom: 10%;  */
+}

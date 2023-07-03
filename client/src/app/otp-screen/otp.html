@@ -1,0 +1,9 @@
+<div class="otp">
+    <div class="otp-body">
+        <h4 style="text-align: center;">Please Enter OTP</h4>
+        <p style="text-align: center;margin-left: 10px;">A code has been sent to ***9786</p>
+    <div style="padding: 10px; margin-left:30px">
+        <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config" ></ng-otp-input>
+    </div>    
+   
+</div>

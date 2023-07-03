@@ -1,0 +1,89 @@
+  <!-- <nav mat-tab-nav-bar [backgroundColor]="background"  mat-align-tabs="center" [tabPanel]="tabPanel">
+    <a mat-tab-link *ngFor="let link of links" style="text-align: center;"
+       (click)="getUserCardDetails(link)"
+       [active]="activeLink == link"> {{link}} </a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+  
+  <!-- <mat-tab-group>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">credit_card</mat-icon>
+      Card
+    </ng-template>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">money</mat-icon>
+      Activity
+    </ng-template>
+  </mat-tab-group>
+  <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+  <div style="height: 250px;width: 357px;">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="Card">
+        <div>
+          <div class="esqueleto-cartao">
+            <!-- cartão -->
+            <div class="cartao">
+                <!-- frente do cartão -->
+                <div class="face-cartao frontal">
+                    <!-- chip -->
+                    <div class="chip">
+                        <div>
+                            <div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- número do cartão -->
+                    <h2 class="numero-cartao">{{cardNumber}}</h2>
+                    
+                    <!-- nome do proprietário -->
+                    <h3 class="proprietario">{{card}}</h3>
+                    
+                    <!-- data de validade -->
+                    <span class="validade">
+                        <span class="small">VALID<br>THRU</span>
+                        <span>{{cardExpiry | date:'MM/yyyy'}}</span>
+                    </span>
+                    
+                    <!-- bandeira -->
+                    <div class="bandeira">
+                        <img src="https://github.com/IsaacLouzeiro/My-Codepen-Database-Images/blob/master/visa.png?raw=true" alt="bandeira" class="visa">
+                        <img src="https://github.com/IsaacLouzeiro/My-Codepen-Database-Images/blob/master/mastercard.png?raw=true" alt="bandeira" class="mastercard">
+                    </div>
+                </div>
+                
+                <!-- traseira do cartão -->
+                <div class="face-cartao traseira">
+                    <!-- barra preta -->
+                    <div class="barra"></div>
+                    
+                    <!-- caixa com a senha -->
+                    <div class="box-senha">
+                        <span>{{cardCvv}}</span>
+                    </div>
+                    
+                    <small class="observacao">MTN Momo Card &#10084; <a href="https://isaaclouzeiro.dev.br" target="_blank">Afro-Tech Service</a></small>
+                </div>
+            </div>
+        </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Activity" style="width: 357px;">
+        <div class="">
+           <div class="txn-history">
+              <p><b>History</b></p>
+              <p class="txn-list">Payment to xyz shop<span class="debit-amount">-UGX100</span></p>
+  
+              <p class="txn-list">Payment to abc shop<span class="debit-amount">-UGX150</span></p>
+  
+              <p class="txn-list">Credit From abc ltd<span class="credit-amount">+UGX300</span></p>
+  
+              <p class="txn-list">Transfer From John Doe<span class="credit-amount">+UGX100</span></p>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  

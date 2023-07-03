@@ -1,0 +1,30 @@
+
+<div class="main-page" style="align-content: center;margin-top: 100px;" [hidden]="!showOtpScreen">
+  <div id="recaptcha-container"></div>
+  <p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+256 &nbsp;</span>
+        <input type="tel" matInput  placeholder="785-841-123" #phone>
+        <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+      </mat-form-field>
+    </form>
+
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="getPhoneNumber(phone.value)">Login</button>
+      <!-- <a mat-raised-button routerLink=".">Link</a> -->
+    </div>
+</div>
+
+
+
+<div class="otp" [hidden]="showOtpScreen">
+  <div class="otp-body">
+      <h4>Please Enter OTP</h4>
+      <p>A code has been sent to *******9786</p>
+  <div style="padding: 10px; margin-left:30px">
+      <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config" ></ng-otp-input>
+  </div>    
+ 
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "momocard-e107f": {
+      "hosting": {
+        "m-card": [
+          "momocard-e107f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "momocard-e107f"
+  }
+}
